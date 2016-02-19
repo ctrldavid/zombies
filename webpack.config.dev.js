@@ -28,6 +28,9 @@ module.exports = {
       test: /\.jsx?$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src') // Only run on source directory.
+    },{
+      test: /\.svg$/,
+      loader: 'url'
     }]
   },
   devServer: {

@@ -21,3 +21,7 @@ npm install --save-dev babel-loader babel-core
 npm install --save react
 npm install --save react-dom
 npm install --save-dev babel-preset-react
+
+
+### extras
+npm install --save-dev url-loader
