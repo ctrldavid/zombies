@@ -14,8 +14,10 @@ npm install --save-dev webpack-dev-server
 
 
 ### Now to set up babel stuff
-npm install --save-dev babel-preset-es2015 babel-preset-stage-2
+npm install --save-dev babel-preset-es2015 babel-preset-stage-3
 npm install --save-dev babel-loader babel-core
+npm install --save-dev babel-plugin-transform-runtime
+
 
 ### Now react
 npm install --save react
