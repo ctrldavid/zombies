@@ -1,39 +1,64 @@
+:root {
+  --theme-color-dark: #000000;
+  --theme-color-a: #404146;
+  --theme-color-b: #54546c;
+  --theme-color-c: #8283a7;
+  --theme-color-d: #a5d296;
+
+  --my-color-a: rgba(20,20,30,1.0);
+}
+
+
 html {
-  background-color: black;
-  color: rgba(192,192,192,1.0);
+  background-color: var(--theme-color-dark);
+  color: var(--theme-color-d);
 }
 
 div{
   box-sizing: border-box;
 }
 
-.node{
+
+
+
+.node {
   position: absolute;
-  width: 64px;
-  height: 64px;
-  left: -32px;
-  top: -32px;
+  width: 32px;
+  height: 32px;
+  left: -16px;
+  top: -16px;
   cursor: pointer;
   border-radius: 10%;
-  background-color: rgba(0,0,0,1.0);
-  border: solid rgba(20,20,30,1.0) 3px;
-  box-shadow:inset 0px 0px 8px rgba(40,40,40,1.0);
+  background-color: var(--theme-color-dark);
+  border: solid var(--theme-color-a) 2px;
+  box-shadow:inset 0px 0px 8px var(--theme-color-a), 0px 0px 8px 0px var(--theme-color-a);
 }
 
-.node:hover{
-  background-color: rgba(0,0,0,1.0);
-  border: solid rgba(64,64,64,1.0) 2px;
-  box-shadow:inset 0px 0px 8px rgba(120,120,120,1.0);
+.node:hover {
+  width: 48px;
+  height: 48px;
+  left: -24px;
+  top: -24px;  
 }
 
-.node.mine{
+.node.mine {
   background-image:url(./ui/icons/gold-mine.svg);
 }
 
-.node.forest{
+.node.forest {
   background-image:url(./ui/icons/forest.svg);
 }
 
-.node.quarry{
+.node.quarry {
   background-image:url(./ui/icons/dig-dug.svg);
+}
+
+.edge {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform-origin: 0px 0px;
+  background-color: var(--theme-color-a);
+  box-shadow: 0px 0px 8px 3px var(--theme-color-a);
+  height:1px;
 }
