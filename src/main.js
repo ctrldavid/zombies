@@ -2,35 +2,42 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './global.css';
-import logger from './logger';
-//import Hello from './ui/hello.jsx';
-import {Graph} from './ui/Graph.jsx';
-//import * as Graph from './graph/graph';
-import {MapGenerator} from './map_generator';
+import {MapGenerator} from './map/map_generator';
+import {MainGameUI} from './ui/main.jsx';
 
+import {Game} from './game';
 
+// console.log(Graph);
+// console.log(MapGenerator);
 
-// Fucking warnings. I hate doing this.
-console.clear();
+let map = new MapGenerator();
 
-console.log(Graph);
-console.log(MapGenerator);
-
-let map = new MapGenerator;
-
-let gen = () => {
-  if(map.poisson()) {
-    window.setTimeout(gen, 0);
-  } else {
-    map.calcVoronoi();
-    console.dir(map);
-    map.connectDelaunay();
-  }
+const delay = (time) => new Promise((resolve) => window.setTimeout(resolve, time))
+const render = () => {
   ReactDOM.render(
-    <Graph graph={map.graph} />
+    <MainGameUI game={{map}}/>
     , document.getElementById('content')
   );  
 };
+
+let gen = async function(){
+  while (map.poisson()) {
+    render();
+    await delay(0);
+  }
+  console.time("voronoi");
+  map.calcVoronoi();
+  console.timeEnd("voronoi");
+  console.dir(map);
+  console.time("Delaunay");
+  map.connectDelaunay();
+  console.timeEnd("Delaunay");
+  render();
+  let g = new Game();
+  g.map = map;
+  console.log(g);
+  g.render = render;
+}
 
 gen();
 
@@ -42,9 +49,6 @@ gen();
 //   );
 
 // }, 10)
-
-
-
 
 
 

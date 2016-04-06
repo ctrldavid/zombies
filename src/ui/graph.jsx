@@ -1,15 +1,22 @@
 import React from 'react';
+import {TestAction} from './actions/test'
 
 const Node = (props) => {
   const transform = "translate(" + props.x + "px, " + props.y + "px" + ")";
   const style = {
     transform
   };
+
   const classes = [
     props.className,
-    ["quarry", "mine", "forest", "forest", "forest", "forest", "forest", "forest", "forest"][props.node.id%9]
+    props.node.active?"quarry":"forest"    
   ];
-  return <div className={classes.join(" ")} style={style}></div>;
+
+  const mouseEvents = {
+    onMouseOver: () => TestAction.emit(props.node)
+  };
+
+  return <div className={classes.join(" ")} style={style} {...mouseEvents}></div>;
 }
 
 const Edge = (props) => {
@@ -20,7 +27,7 @@ const Edge = (props) => {
   const width = Math.hypot(props.y2-props.y1, props.x2-props.x1);
   const style = {
     transform,
-    width
+    width    
   };
   return <div className={props.className} style={style}></div>;
 }

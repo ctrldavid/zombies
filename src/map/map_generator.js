@@ -5,19 +5,18 @@
 // Try to place it using annulus
 //   -> fail? make inactive.
 
-import {Graph, Node, Edge} from "./graph"
-import Voronoi from '../lib/rhill-voronoi-core.js';
-
+import {Graph, Node, Edge} from "../graph"
+import Voronoi from '../../lib/rhill-voronoi-core.js';
 
 const TileTypes = {
-  "city": Symbol(),
-  "path": Symbol()
+  "city": Symbol("city"),
+  "path": Symbol("path")
 };
 
 class MapGenerator {
 
   constructor () {
-    this.scale = 75;
+    this.scale = 80;
     this.graph = new Graph();
     this.activeNodes = [];
     this.voronoi = new Voronoi;
@@ -142,4 +141,4 @@ class MapGenerator {
 }
 
 
-export {MapGenerator}
+export {MapGenerator, TileTypes}
