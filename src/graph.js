@@ -34,7 +34,7 @@ class Node {
     let search = [this];
     let distance = 0;
     let touched = [];
-    
+
     let found;
     while (search.length > 0) {
       // move the current nodes into touched.
@@ -57,15 +57,15 @@ class Graph {
     this.nodes = [];
     this.edges = [];
   }
-  
+
   add (node) {
     this.nodes.push(node);
   }
-  
+
   remove (node) {
     // find it in the nodes list and remove it
     this.nodes = this.nodes.filter(node2 => node != node2);
-    
+
     // remove its edges
     node.edges.forEach(edge => {
       // find in the graph and remove it

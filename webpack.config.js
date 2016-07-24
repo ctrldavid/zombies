@@ -19,7 +19,7 @@ const defaults = {
       test: /\.svg$/,
       loader: 'url'
     }]
-  }  
+  }
 };
 
 const development = {
@@ -34,7 +34,7 @@ const development = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
-  ],  
+  ],
   devServer: {
     contentBase: './dist',
     hot: true
