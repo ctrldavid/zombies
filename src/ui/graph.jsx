@@ -9,7 +9,7 @@ const Node = (props) => {
 
   const classes = [
     props.className,
-    props.node.active?"quarry":"forest"    
+    props.node.active?"quarry":"forest"
   ];
 
   const mouseEvents = {
@@ -27,7 +27,7 @@ const Edge = (props) => {
   const width = Math.hypot(props.y2-props.y1, props.x2-props.x1);
   const style = {
     transform,
-    width    
+    width
   };
   return <div className={props.className} style={style}></div>;
 }
@@ -40,7 +40,7 @@ const Graph = (props) => {
       })
     }{
       props.graph.nodes.map((node) => {
-        return <Node node={node} key={node.id} className="node" x={node.x} y={node.y} />      
+        return <Node node={node} key={node.id} className="node" x={node.x} y={node.y} />
       })
     }
   </div>
@@ -56,6 +56,6 @@ export {Graph, Edge, Node};
 //     <Node className="node quarry" x="100" y="100"/>
 //     <Node className="node mine" x="400" y="200"/>
 //     <Node className="node forest" x="200" y="300"/>
-    
+
 //   </div>, document.getElementById('content')
 // );

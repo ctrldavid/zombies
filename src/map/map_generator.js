@@ -5,8 +5,8 @@
 // Try to place it using annulus
 //   -> fail? make inactive.
 
-import {Graph, Node, Edge} from "../graph"
-import Voronoi from '../../lib/rhill-voronoi-core.js';
+import {Graph, Node, Edge} from "graph"
+import Voronoi from 'lib/rhill-voronoi-core.js';
 
 const TileTypes = {
   "city": Symbol("city"),
@@ -23,11 +23,11 @@ class MapGenerator {
     this.vDiagram = undefined;
 
     let start = new Node(TileTypes.city);
-    
+
     //DSX: Remove when sorted properly.
     start.x = 1000;
-    start.y = 400;    
-    
+    start.y = 400;
+
     this.graph.add(start);
     this.activeNodes.push(start);
   }
@@ -47,12 +47,12 @@ class MapGenerator {
     return this.graph.nodes.filter((node2) => {
       return this.distance(node, node2) < distance
     }).length === 0;
-    
+
   }
 
   edgeCheck (node) {
     let max = 3;
-    return node.edges.length < max;  
+    return node.edges.length < max;
   }
 
   // Use gorhill's voronoi lib
@@ -114,7 +114,7 @@ class MapGenerator {
     let newNode;
     for (let attempt = 0; attempt < 50; attempt++) {
       let {x, y} = this.newInAnnulus(currentNode, this.scale);
-      
+
       if (!this.clearance({x, y}, this.scale)) { continue; }
       if (window.innerWidth-30 < x) { continue; }
       if (x < 30) { continue; }
@@ -124,7 +124,7 @@ class MapGenerator {
 
 
       newNode = new Node(TileTypes.city);
-      
+
       newNode.x = x;
       newNode.y = y;
 

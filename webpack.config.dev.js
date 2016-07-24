@@ -10,6 +10,9 @@ module.exports = {
     'webpack/hot/dev-server',
     './src/main'
   ],
+  resolve: {
+    root: path.resolve('./src')
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
