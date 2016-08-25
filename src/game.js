@@ -8,7 +8,7 @@ class Game {
     this.map = new MapGenerator();
     this.player = new Player();
 
-    TestAction.on((node) => {
+    TestAction.subscribe(this).on((node) => {
       node.active = true;
       node.edges.forEach((edge) => {
         edge.active = true;
