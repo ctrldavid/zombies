@@ -8,7 +8,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/dev-server',
-    './src/main'
+    './src/public/main'
   ],
   resolve: {
     root: path.resolve('./src')
@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/public/index.html'
     })
   ],
   module: {

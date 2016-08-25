@@ -5,11 +5,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
-  entry: ['./src/main'],
+  entry: ['./src/public/main'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  resolve: {
+    root: path.resolve('./src')
+  },  
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       //"screw-ie8": true,
@@ -19,7 +22,7 @@ module.exports = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/public/index.html',
       inject: 'body'
     })
   ],

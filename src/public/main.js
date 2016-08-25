@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'global.css';
+import './global.css';
 import {MapGenerator} from 'map/map_generator';
-import {MainGameUI} from 'ui/main.jsx';
+import {MainGameUI} from './ui/main.jsx';
 
-import {Game} from 'game';
+import {Game} from './game';
 
 // console.log(Graph);
 // console.log(MapGenerator);

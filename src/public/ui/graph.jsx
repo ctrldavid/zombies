@@ -2,7 +2,9 @@ import React from 'react';
 import {TestAction} from './actions/test'
 
 const Node = (props) => {
-  const transform = "translate(" + props.x + "px, " + props.y + "px" + ")";
+  let x = props.x.toFixed(2);
+  let y = props.y.toFixed(2);
+  const transform = "translate(" + x + "px, " + y + "px" + ")";
   const style = {
     transform
   };
@@ -40,6 +42,7 @@ const Graph = (props) => {
       })
     }{
       props.graph.nodes.map((node) => {
+        console.log(node)
         return <Node node={node} key={node.id} className="node" x={node.x} y={node.y} />
       })
     }

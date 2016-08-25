@@ -1,7 +1,7 @@
 import {MapGenerator} from 'map/map_generator';
 import {Player} from 'player'
 
-import {TestAction} from 'ui/actions/test'
+import {TestAction} from './ui/actions/test'
 
 class Game {
   constructor () {
