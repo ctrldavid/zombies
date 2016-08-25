@@ -42,7 +42,6 @@ const Graph = (props) => {
       })
     }{
       props.graph.nodes.map((node) => {
-        console.log(node)
         return <Node node={node} key={node.id} className="node" x={node.x} y={node.y} />
       })
     }

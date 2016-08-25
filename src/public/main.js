@@ -22,7 +22,7 @@ const render = () => {
 
 let gen = async function(){
   while (map.poisson()) {
-    render();
+    //render();
     await delay(0);
   }
   console.time("voronoi");

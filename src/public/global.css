@@ -12,6 +12,7 @@
 html {
   background-color: var(--theme-color-dark);
   color: var(--theme-color-d);
+  font-family: monospace;
 }
 
 div{
@@ -61,4 +62,54 @@ div{
   background-color: var(--theme-color-a);
   box-shadow: 0px 0px 8px 3px var(--theme-color-a);
   height:1px;
+}
+
+
+/*---------- MENU ------------*/
+div.menu{
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  padding: 0px;
+  margin: auto;
+
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content: center;
+  align-items: center;
+}
+
+div.menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+
+  padding: 0px;
+  margin: -16% 0px 0px 0px;
+;  
+
+  border: solid 4px var(--theme-color-c);
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+  color: var(--theme-color-c);
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+
+  font-size: 32px;  
+}
+
+div.menu ul li {
+  cursor: pointer;
+  display: flex;
+  padding: 20px 15px;
+  margin: 0px 0px;
+
+  background-color: rgba(0,0,0,0.8);
+}
+
+div.menu ul li:hover {
+  color: var(--theme-color-d);
+  background-color: rgba(0,0,0,0.9);
 }
