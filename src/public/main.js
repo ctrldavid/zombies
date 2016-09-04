@@ -23,7 +23,12 @@ const render = () => {
 let gen = async function(){
   render();
   while (map.poisson()) {
-    render();
+    try {
+      // This fails sometimes for some reason
+      //render();
+    } catch(e) {
+      console.log("Error during render: ", e);
+    };
     await delay(0);
   }
   console.time("voronoi");

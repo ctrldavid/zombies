@@ -4,11 +4,9 @@ import {MainMenuUI} from './menu/main.jsx'
 
 const MainGameUI = (props) => {
   const map = props.game.map;
-  return <div>
-    <MapUI map={map} />
-    <div className="menu">
+  return <div className="application">
+      <MapUI map={map} />
       <MainMenuUI />
-    </div>
   </div>;
 };
 

@@ -64,9 +64,7 @@ div{
   height:1px;
 }
 
-
-/*---------- MENU ------------*/
-div.menu{
+div.application{
   position:absolute;
   top:0px;
   bottom:0px;
@@ -81,7 +79,10 @@ div.menu{
   align-items: center;
 }
 
-div.menu ul {
+/*---------- MENU ------------*/
+
+ul.menu {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +101,7 @@ div.menu ul {
   font-size: 32px;  
 }
 
-div.menu ul li {
+ul.menu li {
   cursor: pointer;
   display: flex;
   padding: 20px 15px;
@@ -109,7 +110,7 @@ div.menu ul li {
   background-color: rgba(0,0,0,0.8);
 }
 
-div.menu ul li:hover {
+ul.menu li:hover {
   color: var(--theme-color-d);
   background-color: rgba(0,0,0,0.9);
 }
